@@ -1,28 +1,31 @@
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class Room {
-    private String roomDesc;
-    public ArrayList<Door> doors = new ArrayList();
-   
-    
-    public Room(String roomDesc) {
+class Room {
+    String roomDesc;
+    ArrayList<Door> doors = new ArrayList<>();
+    boolean isWinnersRoom = false;
+
+    void doNarrative() {
+        System.out.println(roomDesc);
+        System.out.println("Doors available for further navigation:");
+        Iterator<Door> var1 = doors.iterator();
+
+        while (var1.hasNext()) {
+            Door d = var1.next();
+            System.out.println("Vädersträck: " + d.direction);
+        }
+    }
+
+    void setWinnersRoom() {
+        isWinnersRoom = true;
+    }
+
+    boolean getIsWinnersRoom() {
+        return isWinnersRoom;
+    }
+
+    Room(String roomDesc) {
         this.roomDesc = roomDesc;
-   
-    }
-
-   
-    public void addDoor(Door door) {
-        this.doors.add(door);
-    }
-   
-    public void doNarrative() {
-
-    }
-    public void setWinnersRoom() {
-        // Mark this room as the winners room
     }
 }
-
-   

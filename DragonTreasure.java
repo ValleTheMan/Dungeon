@@ -5,7 +5,7 @@ public class DragonTreasure {
 
 
 
-   private Dungeon dungeon;    
+   Dungeon dungeon;
    private ArrayList<Room> rooms = new ArrayList();
    Player player;
     public void addRooms(Room room) {
@@ -52,20 +52,10 @@ public class DragonTreasure {
       this.rooms.add(sjätteRoom);
       this.rooms.add(sjundeRoom);
       this.rooms.add(winnersRoom);
-      this.dungeon = new Dungeon();
-      this.dungeon.setCurrentRoom(startRoom);
-    
-
-
-    }   
+      this.dungeon = new Dungeon(startRoom);
+    }
 
     public void endGame() {
 
     }
-
-
-
-
-
-
 }
